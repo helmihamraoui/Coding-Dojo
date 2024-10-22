@@ -19,5 +19,11 @@ class User :
             self.gold_card_points=self.gold_card_points-amount
         else:
             print("you don't have  points")    
-user1=User("helmi","hamaraoui","helmihamraoui54@gmail.com",20,True) 
+user1=User("helmi","hamaraoui","helmihamraoui54@gmail.com",20) 
 user1.display_info()
+user1.enroll()
+user1.spend_points(50)
+user2=User("ahmed","marweni","ahmedmr@gmail.com",22) 
+user2.display_info()
+user2.enroll()
+user2.spend_points(80)
