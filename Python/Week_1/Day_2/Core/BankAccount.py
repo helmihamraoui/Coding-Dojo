@@ -27,9 +27,9 @@ class BankAccount:
     def Bank_Accounts_info(cls):
         for i in range(len(cls.list_of_bankaccount)):
             cls.list_of_bankaccount[i].display_account_info()
-acount1=BankAccount(0.2,120)
-acount2=BankAccount(0.5,10070)
-acount1.deposit(50).deposit(50).deposit(80).withdraw(200).yield_interest().display_account_info()
+acount1=BankAccount(0.02,0)
+acount2=BankAccount(0.02,0)
+acount1.deposit(50).deposit(50).deposit(80).withdraw(100).yield_interest().display_account_info()
 acount2.deposit(50).deposit(80).withdraw(200).withdraw(200).withdraw(200).withdraw(200).yield_interest().display_account_info()
 print('*'*70)
 acount1.Bank_Accounts_info()
