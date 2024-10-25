@@ -1,0 +1,23 @@
+*{
+    margin :0;
+    padding: 0;
+}
+.counter{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+.divbuttom{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 50px;
+}
+button{
+    width: 80px;
+    height: 30px;
+    border: 2px solid #81687A ;
+    color: #81687A;
+}
