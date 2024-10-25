@@ -8,12 +8,11 @@ h1{
 }
 .continer{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     margin:0 auto;
     gap: 50px;
     flex-wrap: wrap;
-    width: 1500px;
+
 }
 .box{
     background-color: aqua;
