@@ -1,17 +1,22 @@
 class Player:
-    def __init__(self,dict):
-        self.name = dict['name']
-        self.age = dict['age']
-        self.position = dict['position']
-        self.team = dict['team']
+    def __init__(self,player_data):
+        self.name = player_data['name']
+        self.age = player_data['age']
+        self.position = player_data['position']
+        self.team = player_data['team']
     @classmethod
-    
     def get_team(cls, team_list):
         new_team=[]
-        for i in  range (len(team_list)):
-            temps=Player(team_list[i])
+        for player in  team_list:
+            temps=Player(player)
             new_team.append(temps)
-        return new_team    
+        return new_team  
+    def display(self):
+        print("*"*50)
+        return f"name: {self.name}, age: {self.age}, position: {self.position}, team: {self.team}"
+
+
+
 kevin = {
         "name": "Kevin Durant", 
         "age":34, 
@@ -72,4 +77,6 @@ players = [
         "team": "Chicago Bulls"
     }
 ]
-print(Player.get_team(players))
+teamlist=Player.get_team(players)
+for player in teamlist:
+    print(player.display())
