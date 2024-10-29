@@ -1,0 +1,5 @@
+select * from names;
+insert into names (name) values('aimliy hafnawi');
+insert into names (name) values('lotfi charawi'),('Monji bohsan');
+DELETE FROM names WHERE id>62;
+UPDATE names SET name = 'naji' WHERE id=65;
