@@ -1,0 +1,43 @@
+INSERT INTO Dojos (name) VALUES 
+    ('coding dojo'),
+    ('rbk'),
+    ('comycode');
+
+SET SQL_SAFE_UPDATES = 0;  
+DELETE FROM Dojos;
+SET SQL_SAFE_UPDATES = 1;
+
+INSERT INTO Dojos (name) VALUES 
+    ('coding dojo'),
+    ('rbk'),
+    ('comycode');
+
+INSERT INTO Ninjas (first_name, last_name, age, dojo_id) VALUES 
+    ('aziz', 'tounsi', 20, 1),
+    ('ahmed', 'marweni', 18, 1),
+    ('nour', 'toujeni', 25, 1),
+    
+    ('marwen', 'marsawi', 35, 2),
+    ('Neji', 'jelani', 40, 2),
+    ('monther', 'slimani', 20, 2),
+    
+    ('marwen', 'hamrouni', 20, 3),
+    ('housem', 'harhat', 21, 3),
+    ('hamza', 'jbeli', 24, 3);
+
+SELECT * FROM Ninjas WHERE dojo_id = (SELECT id FROM Dojos LIMIT 1);
+SELECT * FROM Ninjas WHERE dojo_id = (SELECT id FROM Dojos ORDER BY id DESC LIMIT 1);
+SELECT Dojos.*, Ninjas.* 
+FROM Dojos 
+JOIN Ninjas ON Dojos.id = Ninjas.dojo_id 
+ORDER BY Ninjas.id DESC 
+LIMIT 1;
+
+SELECT Ninjas.*, Dojos.name AS dojo_name 
+FROM Ninjas
+JOIN Dojos ON Ninjas.dojo_id = Dojos.id
+WHERE Ninjas.id = 6;
+
+SELECT Ninjas.*, Dojos.name AS dojo_name
+FROM Ninjas
+JOIN Dojos ON Ninjas.dojo_id = Dojos.id;
