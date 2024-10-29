@@ -1,0 +1,27 @@
+.continer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 90px;
+    padding: 50px;
+}
+h1{
+    text-align: center;
+    margin: 40px;
+    width: 350px;
+    height: 40px;
+    padding: 10px;
+}
+.checkerboard {
+    display: grid;
+}
+
+.row {
+    display: flex;
+}
+
+.box {
+    width: 50px;
+    height: 50px;
+}
