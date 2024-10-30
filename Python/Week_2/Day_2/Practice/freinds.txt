@@ -1,0 +1,42 @@
+insert into users (first_name,last_name) values('yassin','hamdi'),('ahmed','marweni'),('yasmine','hamemi'),('monther','trablesi'),('aziz','selmi'),('nour','jbali');
+insert into friendships (user_id, friend_id) values(1, 2),(1, 4),(1, 6);
+insert into friendships (user_id, friend_id) values(2, 1),(2, 3),(2, 5);
+insert into friendships (user_id, friend_id) values(3, 2),(3, 5);
+insert into friendships (user_id, friend_id) values(4, 3);
+insert into friendships (user_id, friend_id) values(5, 1),(5, 6);
+insert into friendships (user_id, friend_id) values(6, 2),(6, 3);  
+select user1.first_name as user_first_name,
+       user1.last_name as user_last_name,
+       user2.first_name as friend_first_name,
+       user2.last_name as friend_last_name
+from friendships 
+join users user1 on user_id = user1.id
+join users user2 on friend_id = user2.id
+order by user1.id, user2.id;
+select user1.first_name as user_first_name,
+       user1.last_name as user_last_name,
+       user2.first_name as friend_first_name,
+       user2.last_name as friend_last_name
+from friendships 
+join users user1 on user_id = user1.id
+join users user2 on friend_id = user2.id
+where user2.id=1
+order by user1.id, user2.id ;
+select user1.id as user_id,
+       user1.first_name as user_first_name,
+       user1.last_name as user_last_name,
+       count(user2.id) as friend_count
+from friendships
+join users user1 on friendships.user_id = user1.id
+join users user2 on friendships.friend_id = user2.id
+group by user1.id
+order by friend_count desc limit 1;
+select user1.first_name as user_first_name,
+       user1.last_name as user_last_name,
+       user2.first_name as friend_first_name,
+       user2.last_name as friend_last_name
+from friendships 
+join users user1 on user_id = user1.id
+join users user2 on friend_id = user2.id
+where user1.id=3
+order by user2.first_name;
