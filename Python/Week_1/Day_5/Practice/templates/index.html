@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Number Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5+5hb7ie2JftQGhGHY4lz3wp03SKAyjFu4Cu0z3l" crossorigin="anonymous">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .game-container {
+            text-align: center;
+            background-color: #343a40;
+            padding: 30px;
+            border-radius: 8px;
+            width: 350px;
+        }
+        .form-control {
+            text-align: center;
+            width: 300px;
+            height: 30px;
+        }
+        .btn-guess {
+            background-color: #ffc107;
+            color: #343a40;
+            font-weight: bold;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+        }
+        .input_button{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+        }
+        h2{
+            color: #ffc107;
+        }
+        .alert{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10px;
+            width: 500px;
+            height: 140px;
+            border-radius: 15px;
+            
+        }
+        .again{
+            background-color: #0B5ED7;
+            color: #343a40;
+            font-weight: bold;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!!!</h1>
+    <p>I am thinking of a number between 1 and 100</p>
+    {%if color=='red'%}
+    <div class="alert" style="background-color: red ;" >
+        <h1>{{feedback}}</h1>
+    </div>
+    {%elif color=='green'%}
+    <div class="alert" style="background-color: green;" >
+        <h3>{{feedback}}</h3>
+        <a href="/"><button class="again">play again!</button></a>
+    </div>
+    {%elif color=='black'%}
+    <div class="alert" style="background-color: red ;" >
+        <h1>{{feedback}}</h1>
+        <a href="/"><button class="again">play again!</button></a>
+    </div>
+    {%endif%}
+    <div class="game-container">
+    <form action="/guess" method="POST">
+        <h2 >Take a guess!!!</h2>
+        <div class="input_button">
+            <input type="number" name="guess" class="form-control" min="1" max="100" required>
+            <a href="/geuss"><button type="submit" class="btn btn-guess w-100">Guess</button></a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
