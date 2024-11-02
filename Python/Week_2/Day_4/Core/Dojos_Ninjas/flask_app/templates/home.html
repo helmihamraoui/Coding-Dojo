@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="d-flex flex-column justify-content-center align-items-center gap-5 col-5">
+    <h1> {{liste[0]['name']}} Ninjas </h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">First_name</th>
+            <th scope="col">Last_name</th>
+            <th scope="col">age</th>
+        </tr>
+        </thead>
+        <tbody>
+            {%for key in liste%}
+        <tr>
+            <th>{{key.id}}</th>
+            <td>{{key.first_name}}</td>
+            <td>{{key.last_name}}</td>
+            <td>{{key.age}}</td>
+        </tr>
+        {%endfor%}
+        </tbody>
+    </table>
+</div>
+<a href="/dojos">Home</a>
+</body>
+</html>
