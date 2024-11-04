@@ -23,9 +23,6 @@ class Dojo:
     def show_ninjas_dojo(cls,data):
         query="SELECT * FROM ninjas join dojos on ninjas.dojo_id = dojos.id where dojos.id= %(id)s ;"
         res=connectToMySQL(DB).query_db(query,data)
-        print("/"*150)
-        print(res[0]['name'])
-        
         liste_ninjas_dojo=[]
         for ninja in res :
             liste_ninjas_dojo.append(ninja)

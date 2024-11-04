@@ -39,9 +39,9 @@
             <div class="mb-3">
                 <label for="option" class="form-label">Dojos :</label>
                 <select class="form-select" id="option" name="dojo_id" required>
-                    <option value="1">coding dojo</option>
-                    <option value="2">rbk</option>
-                    <option value="3">comycode</option>
+                    {%for dojo in liste%}
+                    <option value="{{dojo.id}}">{{dojo.name}}</option>
+                    {%endfor%}
                 </select>
                 <div class="mb-3">
                     <label for="name" class="form-label">first_name :</label>
