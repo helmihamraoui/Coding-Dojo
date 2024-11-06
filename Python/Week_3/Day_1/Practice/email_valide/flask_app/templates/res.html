@@ -14,15 +14,15 @@
 </head>
 <body>
     <div class="card ">
-    <div class="d-flex justify-content-center bg-success card-header "><h3>the email address you entered ( {{last.email}} ) is a valiad email address ! thank you!</h3></div>
-    <div class="  card-body ">
+        <div class="card-head "><div class="d-flex justify-content-center bg-success card-header"><h3>the email address you entered ( {{last.email}} ) is a valiad email address ! thank you!</h3></div>
+    <div class="  card-body">
         <div>
-            <h1>Email Addresses Entered :</h1>
+            <div><h1>Email Addresses Entered :</h1> <a href="/remove/{{last.id}}">remove</a></div>
             <table class="table">
                 <thead>
                     <tr>
-                        <th scope="col">email</th>
-                        <th scope="col">created at</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Created at</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -19,3 +19,7 @@ def get_all():
     id=session['id']
     print(Email.get_one_by_id({'id':id}))
     return render_template("res.html",emails=emails,last=Email.get_one_by_id({'id':id}))
+@app.route('/remove/<int:id>')
+def remove_email(id):
+    Email.remove({'id':id})
+    return redirect('/')

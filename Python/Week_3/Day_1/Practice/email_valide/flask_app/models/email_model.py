@@ -31,6 +31,10 @@ class Email :
         query="select * from email where id=%(id)s;"
         res=connectToMySQL(DATABASE).query_db(query,data)
         return cls(res[0])
+    @classmethod
+    def remove(cls,data):
+        query="delete from email where id=%(id)s;"
+        return connectToMySQL(DATABASE).query_db(query,data)
     @staticmethod
     def valide(data):
         email=data["email"]
