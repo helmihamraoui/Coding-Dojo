@@ -18,7 +18,7 @@ class Dojo:
     def get_by_id(cls,data):
         query="SELECT * FROM dojo_survey_shema.dojo_survey  where id= %(id)s ;"
         res=connectToMySQL(DATABASE).query_db(query,data)
-        
+        print(res)
         return cls(res[0])
     @staticmethod
     def validation(data ):
