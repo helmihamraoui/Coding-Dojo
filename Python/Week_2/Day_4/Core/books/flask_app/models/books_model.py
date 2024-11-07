@@ -25,6 +25,25 @@ class Book:
         SELECT * FROM books_schema.books join books_schema.favorites on books_schema.books.id= books_schema.favorites.book_id where book_id=%(id)s
         """
         res=connectToMySQL(bd).query_db(query, id)
-        print("*/"*200)
-        print(res)
         return res
+    @classmethod
+    def get_one(cls,data):
+        query="""select * from books where id =%(id)s""" 
+        res=connectToMySQL(bd).query_db(query,data)   
+        return res[0]
+    @classmethod
+    def add_new_fav(cls,data):
+        query="insert into favorites (book_id,author_id) values (%(book_id)s,%(author_id)s);"
+        return  connectToMySQL(bd).query_db(query,data)
+    @classmethod
+    def all_fav_athors(cls,data):
+        query="""SELECT * 
+FROM books_schema.favorites 
+JOIN books_schema.books ON books_schema.books.id = books_schema.favorites.book_id 
+JOIN books_schema.authors ON books_schema.authors.id = books_schema.favorites.author_id 
+WHERE books_schema.favorites.book_id = %(book_id)s;"""
+        res=connectToMySQL(bd).query_db(query,data)
+        list_of_fav_athors=[]
+        for fav in res:
+            list_of_fav_athors.append(fav)
+        return list_of_fav_athors

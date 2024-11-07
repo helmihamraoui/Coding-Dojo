@@ -12,35 +12,29 @@
     <div class="row justify-content-md-center d-flex gap-5">
         <div class="col col-lg-2 d-flex flex-column gap-2 " style="background-color: #33393E; height: auto;">
             <div >
-                <h4 class="text-primary">{{author.full_name}} f: </h4>
+                <h4 class="text-danger"> </h4>
+                <h5 class="text-primary">{{new.title}} Faborit by:</h5>
                 <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Title</th>
-                        <th scope="col"># of pages</th>
-                    </tr>
-                    </thead>
                     <tbody>
-                    {%for author in fav%}
+                        {%for book in books %}
                     <tr>
-                        <th>{{author.title}}</th>
+                        <th>{{book.full_name}}</th>
                         
-                        <td>{{author.num_of_pages}}</td>
                     </tr>
-                    {%endfor%}
+                {%endfor%}
                     </tbody>
-                    <a href="/authors">Home</a>
                 </table>
+                <a href="/authors">Home</a>
             </div>
         </div>
     <div class="col col-lg-2 " style="background-color: #33393E; height: 150px; ">
         <h1 style="color: #0B5ED7;">New Author</h1>
         <label class="form-label" style="color: #0B5ED7;">Name :</label>
         <div class="d-flex gap-2">
-            <form action='/add/{{author.id}}' method="post" class="d-flex">
-                <select name="book_id" class="form-control">
-                    {% for book in books %}
-                        <option value="{{ book.id }}">{{ book.title }}</option>
+            <form action='/add/fav/{{id}}' method="post" class="d-flex">
+                <select name="author_id" class="form-control">
+                {% for author in liste %}
+                        <option value="{{ author.id }}">{{ author.full_name }}</option>
                     {% endfor %}
                 </select>
                 <button type="submit" class="btn btn-primary">Create</button>
