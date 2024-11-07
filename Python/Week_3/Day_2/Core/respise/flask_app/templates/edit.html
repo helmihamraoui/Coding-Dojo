@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center"><h2>add a new Recipe!</h2>
+            <div class="d-flex  align-items-center gap-2">
+                <a class="btn btn-primary" href="/home">back to recipes</a>
+                <form action="/logout" method="post">
+                    <button type="submit" class="btn btn-danger">logout</button>
+                </form>
+            </div>
+        </div>
+    <form action="/update/{{post.id}}" method="post" class="d-flex gap-5 align-items-center mt-5">
+        <div class="d-flex flex-column gap-5 col-5">
+            <div><label class="form-label">Name :</label>
+                {%for message in get_flashed_messages(category_filter=['name'])%}
+                    <div class="alert alert-warning">{{message}}</div>
+                    {%endfor%}
+            <input class="form-control" type="text" name="name" value="{{post.name}}"></div>
+        <div><label class="form-label">Description :</label>
+            {%for message in get_flashed_messages(category_filter=['description'])%}
+                    <div class="alert alert-warning">{{message}}</div>
+                    {%endfor%}
+        <textarea style="height: 90px" class="form-control" name="description" >{{post.description}}</textarea></div>
+        <div><label class="form-label">Instructions :</label>
+            {%for message in get_flashed_messages(category_filter=['instructions'])%}
+                    <div class="alert alert-warning">{{message}}</div>
+                    {%endfor%}
+            <textarea style="height: 170px" class="form-control" name="instructions" >{{post.instructions}}</textarea></div>
+        </div>
+        <div class="d-flex flex-column justify-content-between gap-5 col-5">
+        <div><label class="form-label">Data Cooked/Mode :</label>
+            {%for message in get_flashed_messages(category_filter=['data'])%}
+                    <div class="alert alert-warning">{{message}}</div>
+                    {%endfor%}
+            <input style="width: 200px;;" class="form-control" type="date" name="data" value="{{post.data}}"></div>
+        <div><label  class="form-label">Unser 30 minutes?</label>
+            <div>
+                {%if post.time == 1 %}
+                <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="1" name="time" checked>
+                <label class="form-check-label" >Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="time" value="0" >
+                <label class="form-check-label">No</label>
+            </div>
+            {%else%}
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" value="1" name="time" >
+                <label class="form-check-label" >Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="time" value="0" checked>
+                <label class="form-check-label">No</label>
+            </div>
+            {%endif%}
+        </div></div>
+            <button type="submit" class="btn btn-primary">update</button>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
