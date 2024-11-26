@@ -25,8 +25,8 @@ const pokemon = Object.freeze([
     { "id": 148, "name": "Dragonair",  "types": ["dragon"] }
 ]);
 // 1:
-const bListPkmn = pokemon.filter( p => p.id %3== 0 );
-console.log(bListPkmn)
+// const bListPkmn = pokemon.filter( p => p.id %3== 0 );
+// console.log(bListPkmn)
 // 2:
 // const bListPkmn = pokemon.filter(p => p.types.includes("fire"));
 // console.log(bListPkmn)
@@ -46,9 +46,12 @@ console.log(bListPkmn)
 // const bListPkmn = pokemon.filter(p => p.types[1]==="flying" ).map(p => p.types[0]);
 // console.log(bListPkmn)
 // // 8:
-// const bListPkmn = pokemon.filter(p => p.id !=148);
+// const bListPkmn = pokemon.filter(p => p.types.includes('normal')).length;
 // console.log(bListPkmn)
 // // 9:
+// const bListPkmn = pokemon.filter(p => p.id !=148);
+// console.log(bListPkmn)
+// // 10:
 // const bListPkmn = pokemon.map(p => {
 //     if (p.id === 35) {
 //     return {
