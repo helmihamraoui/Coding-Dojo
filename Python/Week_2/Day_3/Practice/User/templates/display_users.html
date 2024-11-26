@@ -24,22 +24,24 @@
         <h1>All Users</h1>
         <table class="table">
             <thead>
-            <tr>
-                <th scope="col">id</th>
-                <th scope="col">first name</th>
-                <th scope="col">Last name</th>
-                <th scope="col">created at</th>
-            </tr>
-            </thead>
-            <tbody>
-                {%for user in users %}
-            <tr>
-                <td>{{user.id}}</td>
-                <td>{{user.first_name}}</td>
-                <td>{{user.last_name}}</td>
-                <td>{{user.created_at}}</td>
-            </tr>
-            {%endfor%}
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">first name</th>
+                    <th scope="col">Last name</th>
+                    <th scope="col">email</th>
+                    <th scope="col">created at</th>
+                </tr>
+                </thead>
+                <tbody>
+                    {%for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.first_name}}</td>
+                    <td>{{user.last_name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.created_at}}</td>
+                </tr>
+                {%endfor%}
             </tbody>
         </table>
     <a href="/user/new">Add a New User</a>
