@@ -22,11 +22,16 @@ function App() {
 
   return (
     <>
-      <PersonCard
-      
-        MyData={person}
-      
-      />
+      {person.map((person, index) => {
+              return <PersonCard
+            key={index}
+            firstname= {person.firstname}
+            lastname={person.lastname}
+            age={person.age}
+            color={person.hairColor}
+            
+            />
+        })}
     </>
   )
 }

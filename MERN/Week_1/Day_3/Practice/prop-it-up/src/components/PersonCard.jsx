@@ -1,16 +1,14 @@
 import React from "react";
 
 function PersonCard( props ) {
-    console.log(props)
+    const { index,firstname , lastname,age,color}=props
     return (
         <ul>
-        {props.map((person, index) => (
             <div style={{ margin:"100px" }} key={index}>
-            <h1> {person.firstname}, {person.lastname}</h1>
-            <p>Age: {person.age}</p>
-            <p>Hair Color: {person.hairColor}</p>
+            <h1> {firstname}, {lastname}</h1>
+            <p>Age: {age}</p>
+            <p>Hair Color: {color}</p>
             </div>
-        ))}
         </ul>
     );
     }

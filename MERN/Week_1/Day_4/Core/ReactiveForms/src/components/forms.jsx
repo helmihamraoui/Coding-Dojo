@@ -42,7 +42,7 @@ const Forms = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        console.log(validateForm());
+        // console.log(validateForm());
         if (validateForm()) {
 
             const newUser = {
@@ -84,7 +84,7 @@ const Forms = () => {
                 <div className="input-group input-group-sm">
                     <label htmlFor="password">Password</label>
                     <input type="password" placeholder="password"    onChange={(e) => validateForm(setPassword(e.target.value))} value={password} />
-                    {<p className="error">{errors.password}</p>}
+                    { <p className="error">{errors.password}</p>}
                 </div>
                 <div className="input-group input-group-sm">
                     <label htmlFor="confirmPassword">Confirm Password</label>
