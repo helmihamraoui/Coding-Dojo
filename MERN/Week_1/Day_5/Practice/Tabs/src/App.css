@@ -1,0 +1,35 @@
+.tabs-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tabs-header {
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 2px solid #ccc;
+}
+
+.tab-header {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.tab-header:hover {
+  background-color: #e2e2e2;
+}
+
+.tab-header.active {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.tab-content {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ccc;
+}
