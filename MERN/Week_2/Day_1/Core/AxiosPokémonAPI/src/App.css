@@ -1,0 +1,15 @@
+.Container{
+  margin: 0 auto;
+  width: 500px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.Container h1{
+  font-size: 70px;
+  font-family: 'Courier New', Courier, monospace;
+}
+.pokemon{
+  font-size: 25px;
+}
