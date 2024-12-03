@@ -11,7 +11,7 @@ function App() {
     confirmPassword: '',
 });
   return (
-    <div className="container mt-5">
+    <div className="container mt-5c">
       <Form setFormData={setFormData} formData={formData}/>
       <div className="mt-4 p-3 border rounded bg-light shadow">
             <ul className="list-group">
