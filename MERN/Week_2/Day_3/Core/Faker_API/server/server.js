@@ -1,5 +1,7 @@
 import express from "express";
 import { faker } from "@faker-js/faker";
+const app = express();
+const port = 5000;
 const createUser = () => ({
     _id: faker.datatype.uuid(),
     firstName: faker.name.firstName(),
@@ -21,8 +23,6 @@ const createCompany = () => ({
 });
 
 
-const app = express();
-const port = 5000;
 app.get("/api/users/new", (req, res) => {
     const user = createUser();
     res.json(user);
