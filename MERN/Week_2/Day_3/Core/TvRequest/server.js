@@ -4,7 +4,7 @@ import tvRoutes from './routes/Tv.routes.js';
 const app = express();
 const port = 5000;
 app.use(express.json());
-app.use('/tvshows', tvRoutes);
+app.use('/', tvRoutes);
 
 
 

@@ -7,6 +7,7 @@ const UpdateBook = () => {
     const nav = useNavigate();
     const { id } = useParams();
     const [title,setTitle]=useState("")
+    const [errors, setErrors] = useState({});
     const [book, setBook] = useState({
         title: '',
         author: '',
@@ -23,7 +24,6 @@ const UpdateBook = () => {
             .catch((err) => console.error(err));
     }, [id]);
     const handleChange = (e) => {
-        validateForm()
         const { name, value, type, checked } = e.target;
         console.log(checked)
         setBook((prevBook) => ({
@@ -31,7 +31,6 @@ const UpdateBook = () => {
             [name]: type === 'checkbox' ? checked : value,
         }))
     };
-    console.log(book.title.length );
     const handleSubmit = (e) => {
         e.preventDefault();
             axios.put(`http://localhost:5000/api/books/${id}`, book)
@@ -47,7 +46,6 @@ const UpdateBook = () => {
     return (
         <>
         <Navbar title={"Update "+ title}/>
-        {JSON.stringify(book)}
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Title:</label>
