@@ -2,4 +2,5 @@
     <li *ngFor="let student of students">
         {{ student.id }} - {{ student.name }} (Age: {{ student.age }})
     </li>
+    <button (click)="updateStudent()">Update</button>
 </ul>  
