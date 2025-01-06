@@ -1,0 +1,19 @@
+.buttons{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+.navbar{    
+    display: flex;
+    justify-content: space-between;;
+    align-items: center;
+    padding: 30px;
+    border: solid  ;
+    margin: 1px;
+}
+.btn{
+    border-radius: 50px;
+    background-color: #3DC6FE;
+    border: none;
+    box-shadow: 1px 1px black;
+}

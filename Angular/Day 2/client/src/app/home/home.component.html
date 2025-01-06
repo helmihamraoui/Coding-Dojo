@@ -1,0 +1,23 @@
+<app-navbar [title]="title"></app-navbar>
+<div class="container">
+    <table *ngIf="books.length" class="table table-striped mt-5">
+        <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Page Count</th>
+            <th scope="col">Available</th>
+            <th scope="col">Book Page</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{ book.title }}</td>
+            <td>{{ book.author }}</td>
+            <td>{{ book.pages }}</td>
+            <td>{{ book.isAvailable ? 'Yes' : 'No' }}</td>
+            <td><a routerLink="/book/{{ book._id }}" class="btn btn-success">Book Details</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

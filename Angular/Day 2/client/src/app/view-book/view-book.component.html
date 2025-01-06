@@ -1,0 +1,8 @@
+<app-navbar [title]="title"></app-navbar>
+
+<div *ngIf="book" class='card '>
+    <h4>{{book.title}}</h4>
+    <h5>By {{book.author}}</h5>
+    <h6>Page count : {{book.pages}}</h6>
+    <button class='btn btn-danger' (click)="deleteOne(book._id)" > Remove </button>
+</div>
