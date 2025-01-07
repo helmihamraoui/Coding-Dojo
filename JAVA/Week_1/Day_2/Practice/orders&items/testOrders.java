@@ -13,34 +13,34 @@ public class testOrders {
         orders order4 = new orders("Sam");
 
         // Print order1 to the console
-        System.out.println("Order 1: " + order1.getName());
+        System.out.println("Order 1: " + order1.name);
 
-        // Predict what happens when printing 'order1.getTotal()'
-        System.out.println("Order 1 Total: " + order1.getTotal());
+        // Predict what happens when printing 'order1.total'
+        System.out.println("Order 1 Total: " + order1.total);
 
         // Add item1 to order2 and update total
         order2.addItem(item1);
-        System.out.println("Order 2 Total after adding mocha: " + order2.getTotal());
+        System.out.println("Order 2 Total after adding mocha: " + order2.total);
 
         // Add cappuccino to order3 and update total
         order3.addItem(item4);
-        System.out.println("Order 3 Total after adding cappuccino: " + order3.getTotal());
+        System.out.println("Order 3 Total after adding cappuccino: " + order3.total);
 
         // Add latte to order4 and update total
         order4.addItem(item2);
-        System.out.println("Order 4 Total after adding latte: " + order4.getTotal());
+        System.out.println("Order 4 Total after adding latte: " + order4.total);
 
         // Mark Cindhuri's order as ready
         order1.markReady();
-        System.out.println("Order 1 Ready Status: " + order1.isReady());
+        System.out.println("Order 1 Ready Status: " + order1.ready);
 
         // Sam ordered 2 more lattes
         order4.addItem(item2);
         order4.addItem(item2);
-        System.out.println("Order 4 Total after adding 2 more lattes: " + order4.getTotal());
+        System.out.println("Order 4 Total after adding 2 more lattes: " + order4.total);
 
         // Mark Jimmy's order as ready
         order2.markReady();
-        System.out.println("Order 2 Ready Status: " + order2.isReady());
+        System.out.println("Order 2 Ready Status: " + order2.ready);
     }
 }

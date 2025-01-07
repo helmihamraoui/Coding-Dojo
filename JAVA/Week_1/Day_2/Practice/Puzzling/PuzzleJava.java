@@ -42,10 +42,9 @@ public class PuzzleJava {
     ArrayList<String> listOfScores = new ArrayList<>();
     char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
     System.out.println("Please enter number:");
-    // int k = System.console().readLine();
     int k = Integer.parseInt(System.console().readLine());
     int x=0;
-    while(x<k){
+    while(x < k){
     String password="";
     int i=0;
     while (i<8){
