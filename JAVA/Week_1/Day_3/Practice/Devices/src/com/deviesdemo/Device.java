@@ -2,7 +2,7 @@ package com.deviesdemo;
 
 public class Device {
 	private int battery;
- 
+
     public int getBattery() {
 		return this.battery;
 	}
