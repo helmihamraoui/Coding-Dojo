@@ -1,0 +1,9 @@
+@charset "UTF-8";
+.Title{
+	color:#FFB6C1;
+}
+.table{
+    width: 1000px !important;
+    border: 25px solid #FFB6C1 !important;
+    
+}
